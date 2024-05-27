@@ -1,0 +1,40 @@
+<h6>Я буду тут:</h6>
+
+<div class="card-list" *ngFor="let event of events">
+  <div class="card" (click)="goToEvent(event.id)">
+    <div class="card-header">
+      <div class="date">
+        <span class="date-number">25</span>
+        <span class="date-value">мая</span>
+      </div>
+      <div class="title">
+        WTTC PARTY
+      </div>
+      <div class="star">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="36"
+          height="36"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-star">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="card-image">
+        <img src="images/event-pic.jpg" class="logo" alt="">
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <button mat-stroked-button color="primary">ПОДРОБНЕЕ</button>
+    </div>
+  </div>
+</div>

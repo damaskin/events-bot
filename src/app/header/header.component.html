@@ -1,0 +1,12 @@
+<mat-sidenav #sidenav mode="over" class="sidenav">
+  <mat-toolbar>
+    <button mat-icon-button (click)="toggleSidenav()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-nav-list>
+    <a mat-list-item routerLink="/" (click)="closeSidenav()">Главная</a>
+    <a mat-list-item routerLink="/my-events" (click)="closeSidenav()">Мои События</a>
+    <a mat-list-item routerLink="/contacts" (click)="closeSidenav()">Контакты</a>
+  </mat-nav-list>
+</mat-sidenav>

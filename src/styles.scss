@@ -1,0 +1,149 @@
+@use '@angular/material' as mat;
+
+$light-theme: mat.define-theme();
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$azure-palette,
+  )
+));
+
+html {
+  // Apply the base theme at the root, so it will be inherited by the whole app.
+  @include mat.all-component-colors($dark-theme);
+}
+
+.danger {
+  // Override the checkbox hover state to indicate that this is a dangerous setting. No need to
+  // target the internal selectors for the elements that use these variables.
+  --mdc-checkbox-unselected-hover-state-layer-color: red;
+  --mdc-checkbox-unselected-hover-icon-color: red;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--tg-theme-bg-color, #303030);
+  color: var(--tg-theme-text-color, #000);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* src/app/header/header.component.scss */
+.sidenav-container, .mat-drawer {
+  background-color: var(--tg-theme-bg-color, #303030)!important;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+  background-color: var(--tg-theme-bg-color, #303030)!important;
+}
+
+
+
+.sidenav {
+  width: 250px;
+  background-color: var(--tg-theme-bg-color, #303030)!important;
+  color: var(--tg-theme-text-color, #000)!important;
+
+  mat-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--tg-theme-bg-color, #303030);
+  }
+}
+
+.dark-toolbar {
+  background-color: var(--tg-theme-bg-color, #303030);
+  color: var(--tg-theme-text-color, #000);
+}
+
+.light-toolbar {
+  background-color: var(--tg-theme-bg-color, #303030);
+  color: var(--tg-theme-text-color, #000);
+}
+
+.mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--tg-theme-bg-color, #303030);
+}
+
+.mat-drawer-inner-container {
+  display: flex!important;
+  flex-direction: column!important;
+}
+
+
+.card-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 100%;
+  border-radius: 5px 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  .card-header {
+    padding: 10px 10px 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .date {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-right: 20px;
+
+      .date-number {
+        font-size: 28px;
+        font-weight: 600;
+
+      }
+      .date-value {
+        font-size: 17px;
+        font-weight: 400;
+      }
+    }
+
+    .title {
+      font-size: 22px;
+    }
+    .star {
+      opacity: 0.5;
+    }
+  }
+
+  .card-body {
+    .card-image {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .description {
+    padding: 10px;
+  }
+
+  .card-footer {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 10px 10px;
+    box-sizing: border-box;
+    button {
+      box-sizing: border-box;
+      width: 100%!important;
+    }
+  }
+
+}

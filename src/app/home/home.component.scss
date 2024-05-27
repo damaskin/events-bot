@@ -1,0 +1,29 @@
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .logo {
+    border-radius: 50%;
+    width: 100px;
+    border: 3px solid #ffffff;
+  }
+
+  .wellcome {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .second-text {
+    font-size: 15px;
+    color: gray;
+    margin-top: 10px;
+  }
+
+  svg {
+    display: block;
+    margin-top: 10px;
+    opacity: 0.5;
+  }
+}
